@@ -1,15 +1,16 @@
 {
-  "name": "win-fork",
-  "version": "1.0.0",
+  "name": "win-spawn",
+  "version": "1.0.1",
   "description": "Spawn for node.js but in a way that works regardless of which OS you're using",
   "main": "index.js",
-  "scripts": {
-    "test": "mocha"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ForbesLindesay/win-spawn.git"
   },
-  "author": "",
+  "bin": {
+    "win-spawn": "./bin/win-spawn",
+    "win-fork": "./bin/win-spawn"
+  },
+  "author": "ForbesLindesay",
   "license": "BSD"
 }
