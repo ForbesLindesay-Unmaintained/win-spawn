@@ -12,7 +12,7 @@ function spawn(command, args, options) {
         var file = require('fs').readFileSync(matchA[2], 'utf8');
         if (match = /\#\!\/usr\/bin\/env ([^\r\n]+)/.exec(file)) {
           args.unshift(matchA[2]);
-          command = matchA[1] + match[1];
+          command = (matchA[1] || '') + match[1];
         }
       } catch (ex) { }
     }
