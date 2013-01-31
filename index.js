@@ -3,7 +3,20 @@ var os = require('os').type();
 
 module.exports = spawn;
 function spawn(command, args, options) {
-  if (os === 'Windows_NT') {    
+  if (os === 'Windows_NT') {
+    if (command === 'rm') {
+      command = 'rmdir';
+      if (args[0] === '-rf' || args[0] == '-fr') {
+        args[0] = '/q';
+        args.unshift('/s');
+      }
+      if (args[0] === '-f') {
+        args[0] = '/q';
+      }
+      if (args[0] === '-r') {
+        args[0] = '/s';
+      }
+    }
     args = args || [];
     options = options || {};
     var match, matchA;
