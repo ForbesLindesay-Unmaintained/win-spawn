@@ -37,3 +37,5 @@ spawn('./bin/foo', [], {stdio: 'inherit'});
 spawn('NODE_PATH=./lib foo', [], {stdio: 'inherit'});
 spawn('NODE_PATH=./lib foo', [arg1, arg2], {stdio: 'inherit'});
 ```
+
+![viewcount](https://viewcount.jepso.com/count/ForbesLindesay/win-spawn.png)
