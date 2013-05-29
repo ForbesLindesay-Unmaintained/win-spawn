@@ -4,6 +4,8 @@ var os = require('os').type();
 exports = module.exports = spawn;
 function spawn(command, args, options) {
   if (os === 'Windows_NT') {
+    command = command.replace(/\//g, '\\');
+    
     if (command === 'rm') {
       command = 'rmdir';
       if (args[0] === '-rf' || args[0] == '-fr') {
