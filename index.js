@@ -48,6 +48,7 @@ function spawn(command, args, options) {
 
     args.unshift(command);
     args.unshift('/c');
+    args.unshift('/d');
     command = 'cmd';
   }
   return cSpawn(command, args, options);
@@ -60,32 +61,4 @@ function shallowClone(obj) {
       out[key] = obj[key];
     });
   return out;
-}
-
-var fs = require('fs');
-var join = require('path').join;
-
-exports.transformDir = transformDir;
-function transformDir(dirname, options) {
-  options = options || {};
-  var dir = fs.readdirSync(dirname);
-  dir.forEach(function (child) {
-    if (fs.statSync(join(dirname, child)).isDirectory()) {
-      if (child !== 'node_modules' && child !== '.git') {
-        transformDir(join(dirname, child), options);
-      }
-    } else {
-      transform(join(dirname, child), options);
-    }
-  });
-}
-
-exports.transform = transform;
-function transform(file, options) {
-  options = options || {};
-  var content = fs.readFileSync(file, 'utf8').toString();
-  if (/\r\n/g.test(content)) {
-    console.warn('converting ' + file);
-    if (!options.preview) fs.writeFileSync(file, content.replace(/\r\n/g, '\n'), 'utf8');
-  }
 }
