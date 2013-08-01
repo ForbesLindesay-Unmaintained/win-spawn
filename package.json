@@ -8,15 +8,13 @@
     "url": "https://github.com/ForbesLindesay/win-spawn.git"
   },
   "bin": {
-    "win-spawn": "./bin/win-spawn",
-    "win-fork": "./bin/win-spawn",
-    "win-line-endings": "./bin/win-line-endings"
+    "win-spawn": "./bin/win-spawn"
   },
   "devDependencies": {
-    "win-spawn": "*"
+    "linify": "~1.0.1"
   },
   "scripts": {
-    "prepublish": "win-line-endings"
+    "prepublish": "linify transform bin"
   },
   "author": "ForbesLindesay",
   "license": "BSD"
