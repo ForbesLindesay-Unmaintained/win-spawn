@@ -45,11 +45,6 @@ function spawn(command, args, options) {
         }
       });
     }
-
-    args.unshift(command);
-    args.unshift('/c');
-    args.unshift('/d');
-    command = 'cmd';
   }
   return cSpawn(command, args, options);
 }
