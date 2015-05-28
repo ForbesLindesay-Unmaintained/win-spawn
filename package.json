@@ -17,5 +17,5 @@
     "prepublish": "linify transform bin"
   },
   "author": "ForbesLindesay",
-  "license": "BSD"
+  "license": "BSD-3-Clause"
 }
