@@ -1,6 +1,6 @@
 {
   "name": "win-spawn",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Spawn for node.js but in a way that works regardless of which OS you're using",
   "main": "index.js",
   "repository": {
