@@ -1,5 +1,7 @@
 # **DEPRECATED: use [cross-spawn](https://github.com/IndigoUnited/node-cross-spawn) or [cross-spawn-async](https://github.com/IndigoUnited/node-cross-spawn-async) instead.**
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ForbesLindesay/win-spawn.svg)](https://greenkeeper.io/)
+
 # win-spawn
 
   Spawn for node.js but in a way that works regardless of which OS you're using.  Use this if you want to use spawn with a JavaScript file.  It works by explicitly invoking node on windows.  It also shims support for environment variable setting by attempting to parse the command with a regex.  Since all modification is wrapped in `if (os === 'Windows_NT')` it can be safely used on non-windows systems and will not break anything.
